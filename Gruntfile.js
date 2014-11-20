@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                     args: [],
                     ignoredFiles: [],
                     ext: 'js, hbs',
-                    nodeArgs: ['--debug'],
+                    nodeArgs: ['--debug=<%= pkg.debug.debugport %>'],
                     delayTime: 1,
                     cwd: __dirname
                 }

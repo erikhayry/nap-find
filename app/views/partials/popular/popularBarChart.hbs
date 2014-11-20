@@ -3,13 +3,13 @@
 		<script>
 			var popularData = {
 				points: [
-					{{#each searchTerms}}
+					{{#each barChartData}}
 						{{this.[1]}}
 						{{#unless @last}},{{/unless}}
 					{{/each}}
 				],
 				team: [
-					{{#each searchTerms}}
+					{{#each barChartData}}
 						"{{{this.[0]}}}"
 						{{#unless @last}},{{/unless}}
 					{{/each}}

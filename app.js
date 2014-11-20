@@ -20,11 +20,7 @@ searchTermPageRoutes.urlParams.init(app);
 searchTermPageRoutes.routes.init(app);
 searchTermPageRoutes.redirects.init(app);
 
-/********* api Routes & Redirects ***********/
-var apiRoutes = require(config.ROOT + '/app/routes/api');
-apiRoutes.urlParams.init(app);
-apiRoutes.routes.init(app);
-apiRoutes.redirects.init(app);
+
 
 
 app.listen(config.PORT);

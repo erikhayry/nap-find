@@ -1,11 +1,21 @@
 var config = require('../../config/config');
+var async = require('async');
+var dataRequest = require(config.ROOT + '/app/utilities/dataRequest');
 
 var popularController = {
     // controller
 
     renderPage: function(req, res) {
+        async.parallel({
+            collectPopular: function(callback) {
+                dataRequest.fetchData('http://127.0.0.1:3000/metrics/aggregation/search/popular/'+ req.params.type, callback);
+            }          
+        }, function(error, results) {
+
         var template = 'popular';
         
+        var barChartData = results.collectPopular.body.slice(0, 10)  
+
         res.render(template, {
         	metadata: {
         		title: ''
@@ -14,59 +24,11 @@ var popularController = {
 			layout: 'default',
             template: template,
             type: req.params.type,
-            searchTerms: 
-[
-[
-"gucci", 
-11
-],
-[
-"burberry", 
-7
-],
-[
-"alexander mcqueen", 
-7
-],
-[
-"boots", 
-5
-],
-[
-"louboutin", 
-5
-],
-[
-"alexander", 
-4
-],
-[
-"nike", 
-3
-],
-[
-"alic", 
-2
-],
-[
-"acne", 
-2
-],
-[
-"prada", 
-2
-],
-[
-"marc by marc jacobs", 
-2
-],
-[
-"diane", 
-2
-]
-]
-                     
+            searchTerms:  results.collectPopular.body,
+            barChartData: barChartData   
 		});
+
+    })
         
     }
 };

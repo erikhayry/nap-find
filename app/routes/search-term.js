@@ -21,7 +21,7 @@ var redirects = {
     init: function(app) {
         app.get('/search/term/:searchTerm',
             function(req, res, next){
-                res.redirect(302, '/search/term/' + req.params.searchTerm + '/realtime');
+                res.redirect(302, '/search/term/' + req.params.searchTerm + '/now');
             }
         );
     } 
