@@ -42,8 +42,8 @@ $(function () {
                 series: [
                 {
                     name: 'Points',
-                    color: ' #ffffff',
-                    data: popularDataForChart.points
+                    data: popularDataForChart.points,
+                    color: "#33CCCC"
                 }],
                 credits: {
                     enabled: false

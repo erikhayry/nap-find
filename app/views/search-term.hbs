@@ -1,18 +1,27 @@
-<h2>{{title}}</h2>
+<input id="search" placeholder="{{title}}" type="text" class="m-search" />
 
 <ul class="nav nav-justified">
 	<li class="{{isActive type 'realtime'}}">
-		<a class="disabled" href="/search/term/{{searchTerm}}/realtime">Realtime</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/realtime"><span class="glyphicon glyphicon-ok"></span> Realtime</a>
 	</li>
 	<li class="{{isActive type 'yesterday'}}">
-		<a class="disabled" href="/search/term/{{searchTerm}}/yesterday">Yesterday</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/yesterday"><span class="glyphicon glyphicon-ok"></span> Yesterday</a>
 	</li>
 	<li class="{{isActive type 'last-week'}}">
-		<a class="disabled" href="/search/term/{{searchTerm}}/last-week">Last week</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/last-week"><span class="glyphicon glyphicon-ok"></span> Last week</a>
 	</li>
 	<li class="{{isActive type 'last-month'}}">
-		<a class="disabled" href="/search/term/{{searchTerm}}/last-month">Last month</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/last-month"><span class="glyphicon glyphicon-ok"></span> Last month</a>
 	</li>
 </ul>
 
 {{> map/searchTermMap}}
+
+<ol class="list">
+	{{#each data}}
+		<li>
+			{{index @index}}. {{this.country}}
+			<span>{{this.searches}}</span>
+		</li>
+	{{/each}}
+</ol>

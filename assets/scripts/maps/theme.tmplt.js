@@ -3,21 +3,15 @@
  * @author Torstein Honsi
  */
 
-// Load the fonts
-Highcharts.createElement('link', {
-   href: 'http://fonts.googleapis.com/css?family=Unica+One',
-   rel: 'stylesheet',
-   type: 'text/css'
-}, null, document.getElementsByTagName('head')[0]);
-
 Highcharts.theme = {
-   colors: ["#2b908f", "#90ee7e", "#f45b5b", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
       "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
-   nullColor: 'red',   
    chart: {
+
       backgroundColor: '<%= bg %>',
       style: {
-         fontFamily: "'Unica One', sans-serif"
+         fontFamily: "'Gill Sans MT', Arial, Helvetica, sans-serif;",
+         textTransform: "uppercase"
       },
       plotBorderColor: '#606063'
    },
@@ -69,10 +63,14 @@ Highcharts.theme = {
       }
    },
    tooltip: {
-      backgroundColor: 'rgba(0, 0, 0, 0.85)',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
       style: {
          color: '#F0F0F0'
-      }
+      },
+      borderWidth: 0,
+      borderRadius: 0,
+      useHTML: true,
+      pointFormat: 'test {series.name}: <b>{point.y}</b><br/>',
    },
    plotOptions: {
       series: {
@@ -82,6 +80,7 @@ Highcharts.theme = {
          marker: {
             lineColor: '#333'
          },
+         color: "#000",
          nullColor: '<%= mapBg %>',
          borderColor: '<%= bg %>'
       },
@@ -178,8 +177,8 @@ Highcharts.theme = {
       outlineColor: '#CCC',
       maskFill: 'rgba(255,255,255,0.1)',
       series: {
-         color: '#7798BF',
-         lineColor: '#A6C7ED'
+         color: '#E0E0E8',
+         lineColor: '#E0E0E8'
       },
       xAxis: {
          gridLineColor: '#505053'

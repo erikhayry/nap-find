@@ -16,6 +16,20 @@ body {
   padding: 0;
 }
 
+.glyphicon-ok {
+  display: none;
+}
+
+.glyphicon-chevron-left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  z-index: 1;
+  margin-top: -32px;
+  font-size: 65px;
+  color: @mapBg;
+}
+
 .row {
   margin: 0;
 }
@@ -35,6 +49,41 @@ a {
   }
 }
 
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+.m-search {
+  padding: 0 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-right: 2px solid white;
+  &:focus {
+    outline: none;
+  }
+  &.is-focus {
+    border-right: none;
+  }
+}
 
 .nav {
   text-transform: uppercase;

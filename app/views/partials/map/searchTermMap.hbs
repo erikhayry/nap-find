@@ -1,17 +1,18 @@
 <div class="m-search-term-map">
-	<a href="/search/popular/realtime">Back</a>
+	<a href="/search/popular/realtime"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	<script>
+		var popularData = {
+			term: "{{title}}",
+			data: [
+				{{#each data}}
+					{"country": "{{{this.country}}}", "value": {{{this.searches}}} }
+					
+					{{#unless @last}},{{/unless}}
+				{{/each}}
+			]
+		} 
+	</script>	
 	<div class="m-search-term-map-container">
-		<script>
-			var popularData = {
-				term: "{{title}}",
-				data: [
-					{{#each data}}
-						{"country": "{{{this.code}}}", "value": {{{this.value}}} }
-						
-						{{#unless @last}},{{/unless}}
-					{{/each}}
-				]
-			} 
-		</script>
+
 	</div>
 </div>
