@@ -1,0 +1,13 @@
+<div class="m-manager-transfer-history-bar-chart">
+	<h2>2014/15 Transfer History</h2>
+	<div class="m-manager-transfer-history-bar-chart-container">
+		<script>
+			var managerTransfers= {
+				points: [{{#each overview.thisSeason}}{{this.gameWeekPoints}}{{#unless @last}},{{/unless}}{{/each}}],
+				transfersMade: [{{#each transfers.transfers}}{{players.length}}{{#unless @last}},{{/unless}}{{/each}}],
+				transfersCost: [{{#each transfers.transfers}}{{this.cost}}{{#unless @last}},{{/unless}}{{/each}}],
+				gameWeek:[{{#each transfers.transfers}}'{{this.title}}'{{#unless @last}},{{/unless}}{{/each}}]
+			} 
+		</script>
+	</div>
+</div>

@@ -1,0 +1,69 @@
+@import "./assets/components/bootstrap/less/variables";
+
+/*
+ * layout sidebar
+ */
+
+
+.l-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -80%;
+  z-index: 1000;
+  display: block;
+  width: 80%;
+  padding: 0 20px;
+  overflow-x: visible;
+  overflow-y: visible;
+  //overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background: @f11-gradient-1;
+  transition: left 500ms ease-in-out;
+
+  &.is-visible {
+    left: 0;
+  }
+
+  @media (min-width: @screen-md-min) {
+    left: auto;
+    width: 16.66666667%; //width of col-md-2. Needs to be automated somehow
+  }
+}
+
+
+
+/*
+ * Layout main content
+ */
+
+.l-main {
+  min-height: 100%;
+  padding: 20px;
+}
+
+@media (min-width: @screen-sm-min) {
+  .l-main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+/*
+  login
+*/
+
+
+/*
+  Views
+*/
+
+.l-homepage {
+  background: @f11-gradient-1;
+  background-attachment: fixed;
+
+  &-box {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+  }
+}

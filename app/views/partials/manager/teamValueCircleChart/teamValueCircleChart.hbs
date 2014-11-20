@@ -1,0 +1,18 @@
+<div class="m-manager-team-value-circle-chart">
+	<h2>Team value <span>vs</span> Money Spent</h2>
+	<div class="m-manager-team-value-circle-chart-container">
+		<script>
+			var managerFinances = {
+				initialTeamValue:['100'],
+				currenTeamValue: ['{{overview.overall.teamValue}}']
+			} 
+		</script>
+		<div>
+			<h3>150</h3>
+			<div id="manager-finances-chart" data-percent="0">
+				
+			</div>
+			{{overview.overall.teamValue}}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+{
+	"f11Primary1": "#000",
+	"f11Primary2": "#000",
+	"f11Primary3": "#000",
+	"f11Primary4": "#000",
+
+	"f11Secondary1": "#fff",
+	"f11Secondary2": "#fff",
+	"f11Secondary3": "#fff",
+	"f11Secondary4": "#fff",
+
+	"f11Bg": "#eeeeee",
+	"f11White": " #ffffff",
+
+	"graphBg": "rgba(255, 255, 255, 0.1)"
+}

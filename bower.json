@@ -1,0 +1,24 @@
+{
+  "name": "final-eleven-frontend",
+  "version": "0.0.1",
+  "homepage": "https://github.com/finaleleven/final-eleven-frontend",
+  "authors": [
+    "Erik Portin erikportin@gmail.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "highcharts": "^4.0.4",
+    "moment": "~2.8.3",
+    "lodash": "^2.4.1",
+    "jquery": "~2.1.1",
+    "jquery.easy-pie-chart": "~2.1.4",
+  }
+}

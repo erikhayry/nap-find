@@ -1,0 +1,13 @@
+<div class="m-manager-points">
+	<div class="m-manager-points-hero panel panel-default">
+		<h2>Game week {{overview.gameweek}}</h2>
+		<p class="large-number">{{overview.overall.points}}</p>
+		<p>Points</p>
+	</div>
+	<ul class="m-manager-points-list list-group">
+		<li class="m-manager-points-item list-group-item">2014/15 Average <span>{{overview.averagePoints}}</span></li>
+		{{#if overview.careerHistory.careerAverage}}
+		<li class="m-manager-points-item list-group-item">Career Average <span>{{overview.careerHistory.careerAverage}}</span></li>
+		{{/if}}
+	</ul>	
+</div>

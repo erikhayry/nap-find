@@ -1,0 +1,14 @@
+<div class="m-league-table">
+	<h2>{{league.title}}</h2>
+	<ul class="m-league-table-list list-group">
+		{{#each league.teams}}
+		<li class="m-league-table-team list-group-item">
+			<a href="/manager/{{this.manager.id}}/overview">{{this.team}}</a>
+			<span>{{this.manager.name}}</span>
+			<span>{{this.total}}</span>
+			<span class="badge badge-position">{{this.position}}</span>
+			<span class="badge badge-{{this.positionMovement}}">{{this.positionMovement}}</i>			
+		</li>
+		{{/each}}
+	</ul>
+</div>

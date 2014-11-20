@@ -1,0 +1,15 @@
+<div class="m-manager-history-line-chart">
+	<h2>2014/15 Points History</h2>
+	<div class="m-manager-history-line-chart-container">
+		<script>
+			var managerHistory = {
+				points: [{{#each overview.thisSeason}}{{this.gameWeekPoints}}{{#unless @last}},{{/unless}}{{/each}}],
+				averagePoints: [{{#each overview.thisSeason}}{{../overview.averagePoints}}{{#unless @last}},{{/unless}}{{/each}}],
+				gameWeek:[{{#each overview.thisSeason}}'{{this.title}}'{{#unless @last}},{{/unless}}{{/each}}]
+			} 
+		</script>
+	</div>
+
+</div>
+
+		

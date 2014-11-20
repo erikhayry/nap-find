@@ -1,0 +1,100 @@
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "./assets/components/bootstrap/less/variables.less";
+@import "./assets/components/bootstrap/less/mixins.less";
+
+@import "variables";
+@import "type";
+
+/*
+  Dashboard borders
+*/
+@media (min-width: @screen-lg-min) {
+  .l-main {
+    .row {
+      overflow: hidden;
+      border-bottom: 3px solid @f11-white;
+      & > div {
+        &:last-child:after {
+          position: absolute;
+          top: 0;
+          width: 2px;
+          height: 1000%;
+          content: '';
+          background-color: @f11-white;
+        }
+        &:first-child:after {
+          display: none;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+
+
+/*
+  Forms
+*/
+
+.form-control {
+  border: none;
+  border-radius: 0;
+}
+
+
+/*
+  Buttons
+*/
+
+.btn-default {
+  background-color: transparent;
+  border-color: @f11-primary-4;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+/*
+  Panel
+*/
+.panel {
+  background-color: @f11-white;
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  .box-shadow(0 1px 1px rgba(0,0,0,.05));
+}
+
+/*
+  List group;
+*/
+.list-group-item {
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+
+  // Round the first and last items
+  &:first-child {
+    border-top: none;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+
+  // Align badges within list items
+  > .badge {
+    float: right;
+  }
+  > .badge + .badge {
+    margin-right: 5px;
+  }
+}

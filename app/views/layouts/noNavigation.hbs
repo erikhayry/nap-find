@@ -1,0 +1,16 @@
+<html>
+  {{> pageHead}}
+  <body class="l-{{template}}">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 l-main">
+          {{{body}}}
+        </div>            
+      </div>
+    </div>
+
+    {{> scripts}}
+    {{> tracking}}
+
+  </body>
+</html>

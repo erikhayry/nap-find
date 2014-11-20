@@ -1,0 +1,30 @@
+@import "./assets/styles/mixins";
+
+.m-manager-leagues {
+  .widget;
+  li {
+    text-align: left;
+  }
+  .badge {
+    &-position {
+      min-width: 65px;
+      margin-left: 10px;
+      background-color: @f11-primary-4;
+    }
+    &-static {
+      background-image: url(http://placehold.it/20&text=-);
+
+      .badge-trend;
+    }
+    &-up {
+      background-image: url(http://placehold.it/20&text=up);
+
+      .badge-trend;
+    }
+    &-down {
+      background-image: url(http://placehold.it/20&text=down);
+
+      .badge-trend;
+    }
+  }
+}

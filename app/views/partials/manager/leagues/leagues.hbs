@@ -1,0 +1,13 @@
+<div class="m-manager-leagues">
+	<h2>My Leagues</h2>
+	<ul class="m-manager-leagues-list list-group">
+		{{#each overview.leagues}}
+		<li class="m-manager-leagues-item list-group-item">
+			<a href="/league/{{this.code}}/overview">{{this.name}}</a>
+			<span class="badge badge-position">{{this.position}}</span>
+			<span class="badge badge-{{this.positionMovement}}">{{this.positionMovement}}</i>			
+		</li>
+		{{/each}}
+	</ul>
+	<a href="" class="btn btn-default">View Leagues</a>
+</div>
