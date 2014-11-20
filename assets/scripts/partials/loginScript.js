@@ -1,1 +1,0 @@
-$(function(){$("#login-help").click(function(){$("#login-help-box").toggleClass("is-open",$(this).is(":checked"))})});

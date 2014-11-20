@@ -8,11 +8,11 @@ var expressUtilities = require(config.ROOT + '/app/utilities/express');
 var app = expressUtilities.appConfiguration.init();
 
 
-/********* homepage Routes & Redirects ***********/
-var homepageRoutes = require(config.ROOT + '/app/routes/homepage');
-homepageRoutes.urlParams.init(app);
-homepageRoutes.routes.init(app);
-homepageRoutes.redirects.init(app);
+/********* popular Routes & Redirects ***********/
+var popularRoutes = require(config.ROOT + '/app/routes/popular');
+popularRoutes.urlParams.init(app);
+popularRoutes.routes.init(app);
+popularRoutes.redirects.init(app);
 
 /********* search term Routes & Redirects ***********/
 var searchTermPageRoutes = require(config.ROOT + '/app/routes/search-term');

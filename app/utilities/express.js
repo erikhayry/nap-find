@@ -21,6 +21,9 @@ var appConfiguration = {
             return (item === current) ? 'is-active' : '';
         });
 
+        hbs.registerHelper('index', function(index){
+            return index+1;
+        });
 
         app.set('view engine', 'hbs');
         

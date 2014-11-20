@@ -1,0 +1,30 @@
+<h2>SEARCH TERMS</h2>
+
+<ul class="nav nav-justified">
+	<li class="{{isActive type 'realtime'}}">
+		<a class="disabled" href="/search/popular/realtime">Realtime</a>
+	</li>
+	<li class="{{isActive type 'yesterday'}}">
+		<a class="disabled" href="/search/popular/yesterday">Yesterday</a>
+	</li>
+	<li class="{{isActive type 'last-week'}}">
+		<a class="disabled" href="/search/popular/last-week">Last week</a>
+	</li>
+	<li class="{{isActive type 'last-month'}}">
+		<a class="disabled" href="/search/popular/last-month">Last month</a>
+	</li>
+</ul>
+
+{{> popular/popularBarChart}}
+
+<ol class="list">
+	{{#each searchTerms}}
+		<li>
+			{{index @index}}.
+			<a href="/search/term/{{this.[0]}}/{{../type}}">
+				 {{this.[0]}}
+			</a>
+			<span>{{this.[1]}}</span>
+		</li>
+	{{/each}}
+</ol>

@@ -4,7 +4,7 @@ var searchTermController = {
     // controller
 
     renderPage: function(req, res) {
-        console.log(req.params)
+
         var template = 'search-term';
         res.render(template, {
         	metadata: {
@@ -12,7 +12,16 @@ var searchTermController = {
         	},
 			title: req.params.searchTerm,
 			layout: 'default',
-            data: 'Some data',
+            data: [
+                    {
+                        "code": "Germany",
+                        "value": 728
+                    },
+                    {
+                        "code": "Finland",
+                        "value": 710
+                    }
+                ],
             type: req.params.type,
             searchTerm: req.params.searchTerm,
             template: template

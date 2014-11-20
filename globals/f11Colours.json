@@ -12,5 +12,11 @@
 	"f11Bg": "#eeeeee",
 	"f11White": " #ffffff",
 
-	"graphBg": "rgba(255, 255, 255, 0.1)"
+	"graphBg": "rgba(255, 255, 255, 0.1)",
+
+
+
+
+	"bg": "#333",
+	"mapBg": "#666"
 }

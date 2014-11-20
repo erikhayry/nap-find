@@ -1,12 +1,63 @@
 @import "variables";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 100%;
   min-height: 100%;
   font-family: @f11-headings-font-family;
   color: white;
+  background-color: @bg;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
 }
 
 img {
   max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  &:hover, &:focus {
+    color: white;
+  }
+}
+
+
+.nav {
+  text-transform: uppercase;
+  border-top: 1px solid @mapBg;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
+
+.list {
+  text-align: left;
+  text-transform: uppercase;
+  li {
+    width: 100%;
+    padding: 20px 10px;
+    border-bottom: 1px solid white;
+    &:last-child {
+      border: none;
+    }
+  }
+  span {
+    float: right;
+  }
 }

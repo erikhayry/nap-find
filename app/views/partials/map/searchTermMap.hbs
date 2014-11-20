@@ -1,0 +1,17 @@
+<div class="m-search-term-map">
+	<a href="/search/popular/realtime">Back</a>
+	<div class="m-search-term-map-container">
+		<script>
+			var popularData = {
+				term: "{{title}}",
+				data: [
+					{{#each data}}
+						{"country": "{{{this.code}}}", "value": {{{this.value}}} }
+						
+						{{#unless @last}},{{/unless}}
+					{{/each}}
+				]
+			} 
+		</script>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<div class="m-popular-bar-chart">
+	<div class="m-popular-bar-chart-container">
+		<script>
+			var popularData = {
+				points: [
+					{{#each searchTerms}}
+						{{this.[1]}}
+						{{#unless @last}},{{/unless}}
+					{{/each}}
+				],
+				team: [
+					{{#each searchTerms}}
+						"{{{this.[0]}}}"
+						{{#unless @last}},{{/unless}}
+					{{/each}}
+				],
+			} 
+		</script>
+	</div>
+</div>

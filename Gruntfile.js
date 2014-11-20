@@ -124,7 +124,7 @@ module.exports = function(grunt) {
                 options: {
                     tmpltsrc: "./globals/f11Colours.json"
                 },
-                src: ['!components/**/*', '**/*.less', '<%= f11.assets %>/scripts/partials/**/*.js']
+                src: ['!components/**/*', '**/*.less', '<%= f11.assets %>/scripts/partials/**/*.js', '<%= f11.assets %>/scripts/maps/**/*.js']
             }
         },
 
@@ -220,10 +220,10 @@ module.exports = function(grunt) {
         'less',
         'useminPrepare',
         'concat',
-        'uglify',
+        //'uglify',
         'cssmin',
         'copy:dist',
-        'uglify',
+        //'uglify',
         'usemin'
     ]);
 
@@ -231,7 +231,7 @@ module.exports = function(grunt) {
     grunt.registerTask('js', [
         'copy:partialScripts',
         'tmplt',
-        'uglify',
+        //'uglify',
         'clean:js'
     ]);
 

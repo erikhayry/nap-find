@@ -1,15 +1,18 @@
-<h1>{{title}}</h1>
-<ul>
+<h2>{{title}}</h2>
+
+<ul class="nav nav-justified">
 	<li class="{{isActive type 'realtime'}}">
-		<a href="/search/term/{{searchTerm}}/realtime">Realtime</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/realtime">Realtime</a>
 	</li>
 	<li class="{{isActive type 'yesterday'}}">
-		<a href="/search/term/{{searchTerm}}/yesterday">Yesterday</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/yesterday">Yesterday</a>
 	</li>
 	<li class="{{isActive type 'last-week'}}">
-		<a href="/search/term/{{searchTerm}}/last-week">Last week</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/last-week">Last week</a>
 	</li>
 	<li class="{{isActive type 'last-month'}}">
-		<a href="/search/term/{{searchTerm}}/last-month">Last month</a>
+		<a class="disabled" href="/search/term/{{searchTerm}}/last-month">Last month</a>
 	</li>
 </ul>
+
+{{> map/searchTermMap}}

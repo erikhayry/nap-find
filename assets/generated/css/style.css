@@ -29,13 +29,7 @@
  */
 .l-main {
   min-height: 100%;
-  padding: 20px;
-}
-@media (min-width: 768px) {
-  .l-main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+  text-align: center;
 }
 /*
   login
@@ -58,14 +52,57 @@
 /*
  Type
 */
+* {
+  box-sizing: border-box;
+}
 body {
   height: 100%;
   min-height: 100%;
   font-family: 'Abel', sans-serif;
   color: white;
+  background-color: #333333;
+}
+.container-fluid {
+  padding: 0;
+}
+.row {
+  margin: 0;
 }
 img {
   max-width: 100%;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: white;
+}
+a:hover,
+a:focus {
+  color: white;
+}
+.nav {
+  text-transform: uppercase;
+  border-top: 1px solid #666666;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+}
+.list {
+  text-align: left;
+  text-transform: uppercase;
+}
+.list li {
+  width: 100%;
+  padding: 20px 10px;
+  border-bottom: 1px solid white;
+}
+.list li:last-child {
+  border: none;
+}
+.list span {
+  float: right;
 }
 h1,
 h2,
@@ -209,6 +246,23 @@ small,
 .medium-number {
   font-size: 80px;
 }
+h1,
+h2 {
+  text-align: center;
+}
+h1 {
+  opacity: 0.4;
+  font-size: 14px;
+}
+h2 {
+  display: inline-block;
+  padding: 0 10px;
+  border-left: 2px solid white;
+}
+.l-search-term h2 {
+  border-right: 2px solid white;
+  border-left: none;
+}
 /*
   Dashboard borders
 */
@@ -284,63 +338,6 @@ small,
 .is-active {
   text-decoration: underline;
 }
-/* Sidebar navigation */
-.m-nav {
-  height: 100%;
-  margin-right: -21px;
-  /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
-  overflow-y: auto;
-}
-.m-nav-toggle {
-  position: absolute;
-  top: 10px;
-  right: -60px;
-  width: 50px;
-}
-@media (min-width: 992px) {
-  .m-nav-toggle {
-    display: none;
-  }
-}
-.m-nav li.m-nav-item a {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-.m-nav li.m-nav-item a:hover,
-.m-nav li.m-nav-item a:focus {
-  color: #fff;
-  background-color: #428bca;
-}
-@media (min-width: 992px) {
-  .m-nav li.m-nav-item a {
-    text-align: center;
-  }
-}
-@media (min-width: 1200px) {
-  .m-nav li.m-nav-item a {
-    text-align: left;
-  }
-}
-.m-nav-logo {
-  display: block;
-  margin: 10px auto;
-}
-.m-nav-icon {
-  display: inline-block;
-  margin: 0 10px;
-}
-@media (min-width: 992px) {
-  .m-nav-icon-label {
-    display: none;
-  }
-}
-@media (min-width: 1200px) {
-  .m-nav-icon-label {
-    display: inline;
-  }
-}
 .widget {
   padding: 20px;
   text-align: center;
@@ -384,218 +381,40 @@ small,
   font-size: 0;
   border-radius: 0;
 }
-.m-manager-leagues {
+.m-search-term-map {
   padding: 20px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  .m-manager-leagues {
+  .m-search-term-map {
     padding: 40px;
   }
 }
-.m-manager-leagues h2 {
+.m-search-term-map h2 {
   font-size: 16px;
 }
-.m-manager-leagues img {
+.m-search-term-map img {
   display: inline-block;
 }
-.m-manager-leagues .btn {
+.m-search-term-map .btn {
   float: right;
 }
-.m-manager-leagues li {
-  text-align: left;
-}
-.m-manager-leagues .badge-position {
-  min-width: 65px;
-  margin-left: 10px;
-  background-color: #000000;
-}
-.m-manager-leagues .badge-static {
-  background-image: url(http://placehold.it/20&text=-);
-  width: 20px;
-  height: 20px;
-  font-size: 0;
-  border-radius: 0;
-}
-.m-manager-leagues .badge-up {
-  background-image: url(http://placehold.it/20&text=up);
-  width: 20px;
-  height: 20px;
-  font-size: 0;
-  border-radius: 0;
-}
-.m-manager-leagues .badge-down {
-  background-image: url(http://placehold.it/20&text=down);
-  width: 20px;
-  height: 20px;
-  font-size: 0;
-  border-radius: 0;
-}
-.m-manager-points {
+.m-popular-bar-chart {
   padding: 20px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  .m-manager-points {
+  .m-popular-bar-chart {
     padding: 40px;
   }
 }
-.m-manager-points h2 {
+.m-popular-bar-chart h2 {
   font-size: 16px;
 }
-.m-manager-points img {
+.m-popular-bar-chart img {
   display: inline-block;
 }
-.m-manager-points .btn {
+.m-popular-bar-chart .btn {
   float: right;
-}
-.m-manager-points-list {
-  list-style: none;
-}
-.m-profile {
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-profile {
-    padding: 40px;
-  }
-}
-.m-profile h2 {
-  font-size: 16px;
-}
-.m-profile img {
-  display: inline-block;
-}
-.m-profile .btn {
-  float: right;
-}
-.m-profile img {
-  display: inline-block;
-}
-.m-manager-history-line-chart {
-  min-height: 400px;
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-manager-history-line-chart {
-    padding: 40px;
-  }
-}
-.m-manager-history-line-chart h2 {
-  font-size: 16px;
-}
-.m-manager-history-line-chart img {
-  display: inline-block;
-}
-.m-manager-history-line-chart .btn {
-  float: right;
-}
-.m-manager-team-value-circle-chart {
-  min-height: 400px;
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-manager-team-value-circle-chart {
-    padding: 40px;
-  }
-}
-.m-manager-team-value-circle-chart h2 {
-  font-size: 16px;
-}
-.m-manager-team-value-circle-chart img {
-  display: inline-block;
-}
-.m-manager-team-value-circle-chart .btn {
-  float: right;
-}
-.m-manager-transfer-history-bar-chart {
-  min-height: 400px;
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-manager-transfer-history-bar-chart {
-    padding: 40px;
-  }
-}
-.m-manager-transfer-history-bar-chart h2 {
-  font-size: 16px;
-}
-.m-manager-transfer-history-bar-chart img {
-  display: inline-block;
-}
-.m-manager-transfer-history-bar-chart .btn {
-  float: right;
-}
-.m-utilities-feedback-form {
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-utilities-feedback-form {
-    padding: 40px;
-  }
-}
-.m-utilities-feedback-form h2 {
-  font-size: 16px;
-}
-.m-utilities-feedback-form img {
-  display: inline-block;
-}
-.m-utilities-feedback-form .btn {
-  float: right;
-}
-.m-utilities-social {
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-utilities-social {
-    padding: 40px;
-  }
-}
-.m-utilities-social h2 {
-  font-size: 16px;
-}
-.m-utilities-social img {
-  display: inline-block;
-}
-.m-utilities-social .btn {
-  float: right;
-}
-.m-countdown {
-  padding: 20px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .m-countdown {
-    padding: 40px;
-  }
-}
-.m-countdown h2 {
-  font-size: 16px;
-}
-.m-countdown img {
-  display: inline-block;
-}
-.m-countdown .btn {
-  float: right;
-}
-.m-login input[type="checkbox"] {
-  display: none;
-}
-.m-login-help-box {
-  height: 0;
-  overflow: hidden;
-  color: #fff;
-  background-color: #222;
-  transition: height 500ms ease-in-out;
-}
-.m-login-help-box.is-open {
-  height: 200px;
-  overflow-y: auto;
 }
 /*# sourceMappingURL=style.css.map */
