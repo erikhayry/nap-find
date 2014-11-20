@@ -80,7 +80,7 @@ Highcharts.theme = {
          marker: {
             lineColor: '#333'
          },
-         color: "#000",
+         color: "#FFF",
          nullColor: '#666',
          borderColor: '#333'
       },

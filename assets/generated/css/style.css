@@ -108,6 +108,7 @@ a:focus {
   color: white;
 }
 .m-search {
+  min-width: 360px;
   padding: 0 10px;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -125,6 +126,8 @@ a:focus {
   border-right: none;
 }
 .nav {
+  padding: 10px 0;
+  font-size: 18px;
   text-transform: uppercase;
   border-top: 1px solid #666666;
 }
@@ -427,8 +430,9 @@ h2 {
 }
 .m-search-term-map {
   position: relative;
+  min-width: 100%;
   min-height: 400px;
-  margin: 100px 0;
+  margin: 50px 0;
   padding: 20px;
   text-align: center;
 }
@@ -445,6 +449,14 @@ h2 {
 }
 .m-search-term-map .btn {
   float: right;
+}
+.m-search-term-map-container {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .m-search-term-map-container {
+    height: 800px;
+  }
 }
 .m-search-term-map-tooltip {
   font-size: 14px;

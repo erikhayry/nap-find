@@ -43,7 +43,7 @@ $(function () {
                 {
                     name: 'Points',
                     data: popularDataForChart.points,
-                    color: "#33CCCC"
+                    color: "#ed3e87"
                 }],
                 credits: {
                     enabled: false
