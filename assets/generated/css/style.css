@@ -130,12 +130,17 @@ a:focus {
   font-size: 18px;
   text-transform: uppercase;
   border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
   background-color: transparent;
 }
 .list {
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  clear: both;
   text-align: left;
   text-transform: uppercase;
 }
@@ -430,7 +435,6 @@ h2 {
 }
 .m-search-term-map {
   position: relative;
-  min-width: 100%;
   min-height: 400px;
   margin: 50px 0;
   padding: 20px;
@@ -450,12 +454,21 @@ h2 {
 .m-search-term-map .btn {
   float: right;
 }
-.m-search-term-map-container {
-  width: 100%;
-}
 @media (min-width: 992px) {
   .m-search-term-map-container {
-    height: 800px;
+    height: 600px;
+  }
+}
+.m-search-term-map-pie-channels {
+  height: 200px;
+  margin-bottom: 100px;
+}
+.m-search-term-map-pie-breakdown {
+  height: 200px;
+}
+@media (min-width: 992px) {
+  .m-search-term-map-pie {
+    height: 600px;
   }
 }
 .m-search-term-map-tooltip {

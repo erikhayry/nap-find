@@ -8,14 +8,14 @@ var searchTermController = {
     renderPage: function(req, res) {
         async.parallel({
             collectLocaleData: function(callback) {
-                dataRequest.fetchData('http://127.0.0.1:3000/metrics/aggregation/search/location/'+ req.params.type + '?term=' + req.params.searchTerm, callback);
+                dataRequest.fetchData('http://10.5.17.226:3000/metrics/aggregation/search/location/'+ req.params.type + '?term=' + req.params.searchTerm, callback);
             },
             collectExtendedData: function(callback) {
-                dataRequest.fetchData('http://127.0.0.1:3000/metrics/aggregation/search/extended/'+ req.params.type + '?term=' + req.params.searchTerm, callback);
+                dataRequest.fetchData('http://10.5.17.226:3000/metrics/aggregation/search/extended/'+ req.params.type + '?term=' + req.params.searchTerm, callback);
             },                      
         }, function(error, results) {
         
-        var channelList = calculateChannels(results.collectLocaleData.body)
+        var channelList = calculateChannels(results.collectLocaleData.body);
 
         var template = 'search-term';
         res.render(template, {

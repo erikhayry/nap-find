@@ -1,4 +1,4 @@
-<div class="m-search-term-map">
+<div class="m-search-term-map col-sm-12">
 	<a href="/search/popular/{{type}}"><span class="glyphicon glyphicon-chevron-left"></span></a>
 	<script>
 		var popularData = {
@@ -9,10 +9,26 @@
 					
 					{{#unless @last}},{{/unless}}
 				{{/each}}
+			],
+			channelList: {
+				"am": {{{channelList.am}}},
+				"intl": {{{channelList.intl}}},
+				"apac": {{{channelList.apac}}}
+			},
+			breakdown: [
+				{{#each extendedSearch}}
+					["{{{this.[0]}}}", {{{this.[1]}}}]
+					
+					{{#unless @last}},{{/unless}}
+				{{/each}}				
 			]
 		} 
 	</script>	
-	<div class="m-search-term-map-container">
+	<div class="m-search-term-map-container col-sm-12 col-md-6 col-lg-9">
 
 	</div>
+	<div class="m-search-term-map-pie col-sm-12 col-md-6 col-lg-3">
+		<div class="m-search-term-map-pie-channels col-sm-6 col-md-12"></div>
+		<div class="m-search-term-map-pie-breakdown col-sm-6 col-md-12"></div>
+	</div>	
 </div>

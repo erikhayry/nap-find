@@ -1,15 +1,15 @@
-$(function () {
+$(function() {
     var popularDataForChart;
     try {
         popularDataForChart = popularData || {};
-    } catch(e) {}
-    if (_.has(popularDataForChart, 'term')) {    
+    } catch (e) {}
+    if (_.has(popularDataForChart, 'term')) {
 
         // Initiate the chart
         $('.m-search-term-map-container').highcharts('Map', {
 
-            title : {
-                text : ''
+            title: {
+                text: ''
             },
 
             mapNavigation: {
@@ -20,7 +20,7 @@ $(function () {
             },
 
             colorAxis: {
-                min: popularDataForChart.data[popularDataForChart.data.length-1].value,
+                min: popularDataForChart.data[popularDataForChart.data.length - 1].value,
                 max: popularDataForChart.data[0].value,
                 type: 'linear',
                 stops: [
@@ -52,8 +52,8 @@ $(function () {
                 ]
             },
 
-            series : [{
-                data : popularDataForChart.data,
+            series: [{
+                data: popularDataForChart.data,
                 mapData: Highcharts.maps["custom/world"],
                 joinBy: ['name', 'country'],
                 name: popularDataForChart.term
@@ -70,28 +70,116 @@ $(function () {
             },
             credits: {
                 enabled: false
-            },            
+            },
         });
+
+        $('.m-search-term-map-pie-channels').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotShadow: false
+            },
+            title: {
+                text: ''
+            },
+
+            plotOptions: {
+                pie: {
+                    colors: ['#f9bad4', '#eb2f7d', '#670a30']
+                }
+            },
+
+            tooltip: {
+                useHTML: true,
+                headerFormat: '',
+                pointFormat: '<span class="m-search-term-map-tooltip">{point.percentage:.1f}%</span>',
+            },
+
+            series: [{
+                type: 'pie',
+                name: '',
+                data: [
+                    ['INTL', popularDataForChart.channelList.intl],
+                    ['AM', popularDataForChart.channelList.am],
+                    ['APAC', popularDataForChart.channelList.apac]
+                ]
+            }],
+            credits: {
+                enabled: false
+            },
+        });
+
+        if (popularDataForChart.breakdown.length > 1) {
+            $('.m-search-term-map-pie-breakdown').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: ''
+                },
+
+                plotOptions: {
+                    pie: {
+                        colors: [
+                            '#f9bad4',
+                            '#f37cae',
+                            '#f05d9a',
+                            '#eb2f7d',
+                            '#e3156b',
+                            '#b41155',
+                            '#570829'
+                        ],
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000000',
+                            connectorColor: '#000000',
+                            formatter: function() {
+                                return this.point.name;
+                            },
+                            style: {
+                                width: '70px'
+                            }
+                        }
+                    }
+                },
+
+                tooltip: {
+                    useHTML: true,
+                    headerFormat: '',
+                    pointFormat: '<span class="m-search-term-map-tooltip">{point.percentage:.1f}%</span>',
+                },
+
+                series: [{
+                    type: 'pie',
+                    name: '',
+                    data: popularDataForChart.breakdown.splice(1)
+                }],
+                credits: {
+                    enabled: false
+                },
+            });
+        }
+
     }
 
     var $search = $('#search'),
         query = '';
 
-    $search.focusin(function(){
-        query =  $(this).val();
+    $search.focusin(function() {
+        query = $(this).val();
         $(this).val('').addClass('is-focus');
     })
 
-    $search.focusout(function(){
+    $search.focusout(function() {
         $(this).removeClass('is-focus');
-        if(!$(this).val() || $(this).val() === ''){
+        if (!$(this).val() || $(this).val() === '') {
             $(this).val(query)
         }
     })
 
-    $search.keyup(function(e){
-        if(e.keyCode == 13 && ($(this).val() || $(this).val() !== ' ')){        
-             window.location = window.location.origin + '/search/term/' + $(this).val();   
+    $search.keyup(function(e) {
+        if (e.keyCode == 13 && ($(this).val() || $(this).val() !== ' ')) {
+            window.location = window.location.origin + '/search/term/' + $(this).val() + '/yesterday/';
         }
     });
 

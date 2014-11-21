@@ -8,7 +8,7 @@ var popularController = {
     renderPage: function(req, res) {
         async.parallel({
             collectPopular: function(callback) {
-                dataRequest.fetchData('http://127.0.0.1:3000/metrics/aggregation/search/popular/'+ req.params.type, callback);
+                dataRequest.fetchData('http://10.5.17.226:3000/metrics/aggregation/search/popular/'+ req.params.type, callback);
             }          
         }, function(error, results) {
 

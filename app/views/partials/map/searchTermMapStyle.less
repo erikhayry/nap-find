@@ -2,16 +2,27 @@
 
 .m-search-term-map {
   position: relative;
-  min-width: 100%;
   min-height: 400px;
   margin: 50px 0;
 
   .widget;
 
   &-container {
-    width: 100%;
     @media (min-width: @screen-md-min) {
-      height: 800px;
+      height: 600px;
+    }
+  }
+
+  &-pie {
+    &-channels {
+      height: 200px;
+      margin-bottom: 100px;
+    }
+    &-breakdown {
+      height: 200px;
+    }
+    @media (min-width: @screen-md-min) {
+      height: 600px;
     }
   }
 
